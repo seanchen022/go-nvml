@@ -15,6 +15,7 @@
 package nvml
 
 import (
+	"log"
 	"unsafe"
 )
 
@@ -956,6 +957,8 @@ func (Device Device) GetBridgeChipInfo() (BridgeChipHierarchy, Return) {
 
 // nvml.DeviceGetComputeRunningProcesses()
 func deviceGetComputeRunningProcesses_v1(Device Device) ([]ProcessInfo, Return) {
+	log.Println("deviceGetComputeRunningProcesses_v1------")
+
 	var InfoCount uint32 = 1 // Will be reduced upon returning
 	for {
 		Infos := make([]ProcessInfo_v1, InfoCount)
@@ -972,6 +975,8 @@ func deviceGetComputeRunningProcesses_v1(Device Device) ([]ProcessInfo, Return) 
 
 func deviceGetComputeRunningProcesses_v2(Device Device) ([]ProcessInfo, Return) {
 	var InfoCount uint32 = 1 // Will be reduced upon returning
+	log.Println("deviceGetComputeRunningProcesses_v2------")
+
 	for {
 		Infos := make([]ProcessInfo_v2, InfoCount)
 		ret := nvmlDeviceGetComputeRunningProcesses_v2(Device, &InfoCount, &Infos[0])
@@ -987,6 +992,7 @@ func deviceGetComputeRunningProcesses_v2(Device Device) ([]ProcessInfo, Return) 
 
 func deviceGetComputeRunningProcesses_v3(Device Device) ([]ProcessInfo, Return) {
 	var InfoCount uint32 = 1 // Will be reduced upon returning
+	log.Println("deviceGetComputeRunningProcesses_v3------")
 	for {
 		Infos := make([]ProcessInfo, InfoCount)
 		ret := nvmlDeviceGetComputeRunningProcesses_v3(Device, &InfoCount, &Infos[0])
