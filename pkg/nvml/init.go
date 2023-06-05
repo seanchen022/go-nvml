@@ -17,7 +17,7 @@ package nvml
 import (
 	"fmt"
 
-	"github.com/NVIDIA/go-nvml/pkg/dl"
+	"github.com/seanchen022/go-nvml/pkg/dl"
 )
 
 import "C"
@@ -83,7 +83,7 @@ var nvmlDeviceGetGridLicensableFeatures = nvmlDeviceGetGridLicensableFeatures_v1
 var nvmlEventSetWait = nvmlEventSetWait_v1
 var nvmlDeviceGetAttributes = nvmlDeviceGetAttributes_v1
 var nvmlComputeInstanceGetInfo = nvmlComputeInstanceGetInfo_v1
-var DeviceGetComputeRunningProcesses = deviceGetComputeRunningProcesses_v1
+var DeviceGetComputeRunningProcesses = deviceGetComputeRunningProcesses_v2
 var DeviceGetGraphicsRunningProcesses = deviceGetGraphicsRunningProcesses_v1
 var DeviceGetMPSComputeRunningProcesses = deviceGetMPSComputeRunningProcesses_v1
 var GetBlacklistDeviceCount = GetExcludedDeviceCount
